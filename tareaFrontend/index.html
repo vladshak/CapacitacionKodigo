@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameVerse|VladShak</title>
+    <link
+      type="image/png"
+      sizes="16x16"
+      rel="icon"
+      href="icons8-control-16.png"
+    />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Videojuegos</h1>
+    </header>
+    <nav>
+      <a
+        href="#"
+        class="enlace activo"
+        data-sec="inicio"
+        onclick="cambiar(event, this)"
+        >Inicio</a
+      >
+      <a class="enlace" href="#" data-sec="eras" onclick="cambiar(event, this)"
+        >Eras del Gaming</a
+      >
+      <a
+        class="enlace"
+        href="#"
+        data-sec="iconicos"
+        onclick="cambiar(event, this)"
+        >Juegos Iconicos</a
+      >
+      <a
+        class="enlace"
+        href="#"
+        data-sec="generos"
+        onclick="cambiar(event, this)"
+        >Géneros Dominantes</a
+      >
+      <a
+        class="enlace"
+        href="#"
+        data-sec="consolas"
+        onclick="cambiar(event, this)"
+        >Consolas del Siglo</a
+      >
+      <a
+        class="enlace"
+        href="#"
+        data-sec="contacto"
+        onclick="cambiar(event, this)"
+        >Contactanos</a
+      >
+    </nav>
+
+    <main class="principal">
+      <section id="inicio" class="visible">
+        <section class="banner">
+          <div class="banner-glow"></div>
+          <div class="banner-glow-2"></div>
+          <div>
+            <span class="banner-tag">// SIGLO XXI &mdash; 2000 HASTA HOY</span>
+            <h1>
+              <span class="line1">LA ERA</span>
+              <span class="line2">DORADA</span>
+              <span class="line3">DIGITAL</span>
+            </h1>
+            <p class="banner-desc">
+              Desde los primeros mundos abiertos hasta la inteligencia
+              artificial y la realidad virtual, los videojuegos del siglo XXI
+              han redefinido el entretenimiento, la cultura y la tecnología
+              humana.
+            </p>
+            <div class="banner-cta">
+              <a
+                href="https://es.wikipedia.org/wiki/Historia_de_los_videojuegos"
+                target="_blank"
+                class="btn-primary"
+                >Explorar Historia</a
+              >
+              <a
+                href="https://es.wikipedia.org/wiki/Anexo:Videojuegos_acreditados_como_los_mejores_de_todos_los_tiempos"
+                target="_blank"
+                class="btn-secondary"
+                >Ver Juegos Historicos</a
+              >
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section id="eras">
+        <div class="section-header fade-in">
+          <span class="section-tag">// Historia</span>
+          <h2 class="section-title">ERAS DEL <span>GAMING</span></h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="timeline fade-in">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2000 — 2005</div>
+            <div class="timeline-era">El Amanecer de los Mundos Abiertos</div>
+            <p class="timeline-desc">
+              Los primeros años del siglo XXI marcaron la transición hacia
+              mundos tridimensionales masivos. PlayStation 2 dominó las salas de
+              todo el mundo y títulos como GTA III revolucionaron la narrativa
+              no lineal. Los gráficos 3D dejaron de ser una novedad para
+              convertirse en estándar.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">PlayStation 2</span>
+              <span class="tag">Xbox Original</span>
+              <span class="tag pink">GTA III</span>
+              <span class="tag pink">Halo CE</span>
+              <span class="tag yellow">Mundo Abierto</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2005 — 2010</div>
+            <div class="timeline-era">
+              La Revolución HD y el Multijugador Online
+            </div>
+            <p class="timeline-desc">
+              Xbox 360 y PlayStation 3 introdujeron los gráficos en alta
+              definición. El multijugador online masivo redefinió la experiencia
+              social del gaming. Call of Duty y World of Warcraft convirtieron
+              los videojuegos en fenómenos culturales sin precedentes.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">Xbox 360</span>
+              <span class="tag">PlayStation 3</span>
+              <span class="tag pink">Wii</span>
+              <span class="tag pink">Call of Duty</span>
+              <span class="tag yellow">Multijugador Online</span>
+              <span class="tag yellow">HD Graphics</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2010 — 2016</div>
+            <div class="timeline-era">El Auge Indie y los Smartphones</div>
+            <p class="timeline-desc">
+              La democratización del desarrollo trajo consigo una explosión de
+              juegos independientes. Minecraft demostró que la creatividad
+              supera los presupuestos millonarios. Los smartphones pusieron el
+              gaming en el bolsillo de miles de millones de personas.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">iOS / Android</span>
+              <span class="tag">Steam</span>
+              <span class="tag pink">Minecraft</span>
+              <span class="tag pink">The Last of Us</span>
+              <span class="tag yellow">Indie Games</span>
+              <span class="tag yellow">Mobile Gaming</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2016 — 2020</div>
+            <div class="timeline-era">
+              Esports, Battle Royale y Realidad Virtual
+            </div>
+            <p class="timeline-desc">
+              Fortnite y PUBG crearon el género Battle Royale que arrasó con
+              todo. Los esports se convirtieron en competencias con premios
+              millonarios y audiencias de estadios. La realidad virtual comenzó
+              a ofrecer inmersión sin precedentes.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">PS4 / Xbox One</span>
+              <span class="tag">Nintendo Switch</span>
+              <span class="tag pink">Fortnite</span>
+              <span class="tag pink">Fortnite</span>
+              <span class="tag yellow">Battle Royale</span>
+              <span class="tag yellow">VR / Esports</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2020 — HOY</div>
+            <div class="timeline-era">
+              Next-Gen, Cloud Gaming e Inteligencia Artificial
+            </div>
+            <p class="timeline-desc">
+              PlayStation 5 y Xbox Series X/S llevaron el ray-tracing y los SSD
+              ultrarrápidos a los hogares. El cloud gaming permite jugar sin
+              consola. La IA generativa empieza a crear mundos, narrativas y
+              personajes dinámicos en tiempo real.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">PS5 / Xbox Series</span>
+              <span class="tag">Cloud Gaming</span>
+              <span class="tag pink">Elden Ring</span>
+              <span class="tag pink">Baldur's Gate 3</span>
+              <span class="tag yellow">Ray Tracing</span>
+              <span class="tag yellow">AI Gaming</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="iconicos">
+        <div class="section-header fade-in">
+          <span class="section-tag">// Hall of Fame</span>
+          <h2 class="section-title">JUEGOS <span>ICÓNICOS</span></h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="games-grid fade-in">
+          <div class="game-card">
+            <div class="game-card-accent cyan"></div>
+            <div class="game-platform">Action RPG • FromSoftware</div>
+            <div class="game-title">Elden Ring</div>
+            <div class="game-year">2022</div>
+            <p class="game-desc">
+              Obra maestra de mundo abierto diseñada con George R.R. Martin.
+              Definió los estándares del género soulslike y ganó el GOTY.
+            </p>
+            <div class="game-score">
+              <div class="score-bar">
+                <div class="score-fill" style="width: 96%"></div>
+              </div>
+              <span class="score-value">96</span>
+            </div>
+          </div>
+
+          <div class="game-card">
+            <div class="game-card-accent pink"></div>
+            <div class="game-platform">RPG • Larian Studios</div>
+            <div class="game-title">Baldur's Gate 3</div>
+            <div class="game-year">2023</div>
+            <p class="game-desc">
+              RPG épico basado en D&D con elecciones narrativas profundas y un
+              nivel de producción que redefinió el género.
+            </p>
+            <div class="game-score">
+              <div class="score-bar">
+                <div class="score-fill pink" style="width: 96%"></div>
+              </div>
+              <span class="score-value">96</span>
+            </div>
+          </div>
+
+          <div class="game-card">
+            <div class="game-card-accent yellow"></div>
+            <div class="game-platform">Open World • Nintendo</div>
+            <div class="game-title">The Legend of Zelda: BotW</div>
+            <div class="game-year">2017</div>
+            <p class="game-desc">
+              Revolucionó la saga y el diseño de mundos abiertos. La libertad de
+              exploración reinventada desde cero.
+            </p>
+            <div class="game-score">
+              <div class="score-bar">
+                <div class="score-fill yellow" style="width: 97%"></div>
+              </div>
+              <span class="score-value">97</span>
+            </div>
+          </div>
+
+          <div class="game-card">
+            <div class="game-card-accent cyan"></div>
+            <div class="game-platform">Survival • Mojang</div>
+            <div class="game-title">Minecraft</div>
+            <div class="game-year">2011</div>
+            <p class="game-desc">
+              El juego más vendido de la historia. Creatividad sin límites que
+              conquistó generaciones enteras de jugadores.
+            </p>
+            <div class="game-score">
+              <div class="score-bar">
+                <div class="score-fill" style="width: 93%"></div>
+              </div>
+              <span class="score-value">93</span>
+            </div>
+          </div>
+
+          <div class="game-card">
+            <div class="game-card-accent pink"></div>
+            <div class="game-platform">Action-Adventure • Naughty Dog</div>
+            <div class="game-title">The Last of Us</div>
+            <div class="game-year">2013</div>
+            <p class="game-desc">
+              Narrativa cinematográfica que elevó los videojuegos al nivel del
+              arte. Una historia de supervivencia que conmueve.
+            </p>
+            <div class="game-score">
+              <div class="score-bar">
+                <div class="score-fill pink" style="width: 95%"></div>
+              </div>
+              <span class="score-value">95</span>
+            </div>
+          </div>
+
+          <div class="game-card">
+            <div class="game-card-accent yellow"></div>
+            <div class="game-platform">Battle Royale • Epic Games</div>
+            <div class="game-title">Fortnite</div>
+            <div class="game-year">2017</div>
+            <p class="game-desc">
+              Fenómeno cultural global que transformó el modelo free-to-play y
+              los eventos en tiempo real dentro del juego.
+            </p>
+            <div class="game-score">
+              <div class="score-bar">
+                <div class="score-fill yellow" style="width: 88%"></div>
+              </div>
+              <span class="score-value">88</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="generos">
+        <div class="section-header fade-in">
+          <span class="section-tag">// Categorías</span>
+          <h2 class="section-title">GÉNEROS <span>DOMINANTES</span></h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="genres-grid fade-in">
+          <div class="genre-card">
+            <span class="genre-icon">⚔️</span>
+            <div class="genre-name">Action RPG</div>
+            <div class="genre-count">El género rey del siglo XXI</div>
+          </div>
+          <div class="genre-card">
+            <span class="genre-icon">🌍</span>
+            <div class="genre-name">Open World</div>
+            <div class="genre-count">Mundos sin fronteras</div>
+          </div>
+          <div class="genre-card">
+            <span class="genre-icon">🎯</span>
+            <div class="genre-name">Battle Royale</div>
+            <div class="genre-count">Nacido en los años 2010s</div>
+          </div>
+          <div class="genre-card">
+            <span class="genre-icon">🏟️</span>
+            <div class="genre-name">MOBA / Esports</div>
+            <div class="genre-count">LoL, Dota 2, Valorant</div>
+          </div>
+          <div class="genre-card">
+            <span class="genre-icon">🎨</span>
+            <div class="genre-name">Indie</div>
+            <div class="genre-count">Creatividad sin límites</div>
+          </div>
+          <div class="genre-card">
+            <span class="genre-icon">📱</span>
+            <div class="genre-name">Mobile Gaming</div>
+            <div class="genre-count">3B jugadores móviles</div>
+          </div>
+          <div class="genre-card">
+            <span class="genre-icon">🕹️</span>
+            <div class="genre-name">Simulación</div>
+            <div class="genre-count">The Sims, Cities Skylines</div>
+          </div>
+          <div class="genre-card">
+            <span class="genre-icon">🎭</span>
+            <div class="genre-name">Aventura Narrativa</div>
+            <div class="genre-count">Historias que emocionan</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="consolas">
+        <div class="section-header fade-in">
+          <span class="section-tag">// Hardware</span>
+          <h2 class="section-title">CONSOLAS <span>DEL SIGLO</span></h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="consoles-layout fade-in">
+          <div>
+            <div class="console-gen">
+              <div class="console-gen-title">
+                GENERACIÓN 6-7 / SONY & MICROSOFT
+              </div>
+              <div class="console-list">
+                <div class="console-item">
+                  <span class="console-dot cyan"></span>
+                  <span class="console-name">PlayStation 2</span>
+                  <span class="console-year">2000 — 155M vendidas</span>
+                </div>
+                <div class="console-item">
+                  <span class="console-dot pink"></span>
+                  <span class="console-name">Xbox Original</span>
+                  <span class="console-year">2001 — Online gaming</span>
+                </div>
+                <div class="console-item">
+                  <span class="console-dot yellow"></span>
+                  <span class="console-name">Xbox 360</span>
+                  <span class="console-year">2005 — Revolution HD</span>
+                </div>
+                <div class="console-item">
+                  <span class="console-dot cyan"></span>
+                  <span class="console-name">PlayStation 3</span>
+                  <span class="console-year">2006 — Blu-ray era</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="console-gen">
+              <div class="console-gen-title">GENERACIÓN 8 / LA ERA MODERNA</div>
+              <div class="console-list">
+                <div class="console-item">
+                  <span class="console-dot pink"></span>
+                  <span class="console-name">PlayStation 4</span>
+                  <span class="console-year">2013 — 117M vendidas</span>
+                </div>
+                <div class="console-item">
+                  <span class="console-dot cyan"></span>
+                  <span class="console-name">Xbox One</span>
+                  <span class="console-year">2013 — Ecosistema Xbox</span>
+                </div>
+                <div class="console-item">
+                  <span class="console-dot yellow"></span>
+                  <span class="console-name">Nintendo Switch</span>
+                  <span class="console-year">2017 — Híbrida icónica</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="console-gen">
+              <div class="console-gen-title">NINTENDO / SIEMPRE INNOVANDO</div>
+              <div class="console-list">
+                <div class="console-item">
+                  <span class="console-dot yellow"></span>
+                  <span class="console-name">Nintendo Wii</span>
+                  <span class="console-year">2006 — Motion Controls</span>
+                </div>
+                <div class="console-item">
+                  <span class="console-dot cyan"></span>
+                  <span class="console-name">Nintendo DS</span>
+                  <span class="console-year">2004 — Pantalla doble</span>
+                </div>
+                <div class="console-item">
+                  <span class="console-dot pink"></span>
+                  <span class="console-name">Nintendo 3DS</span>
+                  <span class="console-year">2011 — 75M portátiles</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="console-gen">
+              <div class="console-gen-title">GENERACIÓN 9 / NEXT-GEN</div>
+              <div class="console-list">
+                <div class="console-item">
+                  <span class="console-dot cyan"></span>
+                  <span class="console-name">PlayStation 5</span>
+                  <span class="console-year">2020 — SSD + DualSense</span>
+                </div>
+                <div class="console-item">
+                  <span class="console-dot pink"></span>
+                  <span class="console-name">Xbox Series X/S</span>
+                  <span class="console-year">2020 — Game Pass</span>
+                </div>
+                <div class="console-item">
+                  <span class="console-dot yellow"></span>
+                  <span class="console-name">Steam Deck</span>
+                  <span class="console-year">2022 — PC portátil</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacto">
+        <h2>Configuración</h2>
+        <p>Parámetros del sistema.</p>
+      </section>
+    </main>
+
+    <footer class="pie">
+      <h3>Todos los derechos reservados &copy;</h3>
+      <h3>Creado por Anibal Martinez</h3>
+    </footer>
+
+    <script>
+      function cambiar(e, link) {
+        e.preventDefault();
+
+        // quitar activo de todos los links
+        document
+          .querySelectorAll("nav a")
+          .forEach((a) => a.classList.remove("activo"));
+
+        // ocultar todas las secciones
+        document
+          .querySelectorAll("section")
+          .forEach((s) => s.classList.remove("visible"));
+
+        // activar el link y mostrar la sección correspondiente
+        link.classList.add("activo");
+        document.getElementById(link.dataset.sec).classList.add("visible");
+      }
+    </script>
+  </body>
+</html>

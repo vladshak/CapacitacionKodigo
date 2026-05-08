@@ -1,0 +1,58 @@
+/* Normalizacion */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f3e5d8;
+  padding: 3rem;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+}
+
+.title {
+  margin: 1rem 0;
+  font-style: italic;
+}
+
+.subtitle {
+  color: #844631;
+  font-size: 1.3rem;
+}
+
+.paragrahp {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.blog-container {
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+img {
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+.blog-container li {
+  line-height: 1.6rem;
+}
+
+table {
+  width: 100%;
+  line-height: 1.6rem;
+}
+
+tr {
+  border-bottom: 1px solid #6b6b6b;
+  font-weight: 800;
+}
