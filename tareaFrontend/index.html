@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GameVerse|VladShak</title>
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
     <link
       type="image/png"
       sizes="16x16"
       rel="icon"
       href="icons8-control-16.png"
     />
-    <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="theme-color" content="#ffffff" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -480,8 +480,104 @@
       </section>
 
       <section id="contacto">
-        <h2>Configuración</h2>
-        <p>Parámetros del sistema.</p>
+        <p class="section-tag">// TRANSMISIÓN DIRECTA</p>
+        <h2 class="section-title">CONTA<span>CTA</span>NOS</h2>
+        <div class="section-line"></div>
+        <div class="form-card">
+          <div class="corner-tl"></div>
+          <div class="corner-br"></div>
+
+          <form id="contactForm" novalidate>
+            <div class="form-grid">
+              <div class="form-group full">
+                <label>Nombre Completo</label>
+                <div class="input-wrap">
+                  <span class="input-icon">◈</span>
+                  <input
+                    type="text"
+                    id="nombre"
+                    placeholder="Ej: Carlos Martínez López"
+                    autocomplete="name"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>País</label>
+                <div class="select-box" id="paisBox">
+                  <div class="select-trigger" id="selectTrigger">
+                    <div class="placeholder-icon">🌎</div>
+                    <span
+                      id="selectLabel"
+                      style="color: rgba(136, 153, 187, 0.6); font-weight: 400"
+                      >— Selecciona tu país —</span
+                    >
+                    <span class="arrow">▼</span>
+                  </div>
+                  <div class="select-dropdown" id="selectDropdown">
+                    <div class="dropdown-search">
+                      <span class="search-icon">⌕</span>
+                      <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Buscar país..."
+                        autocomplete="off"
+                      />
+                    </div>
+                    <div id="optionsList"></div>
+                  </div>
+                </div>
+                <input type="hidden" id="paisValue" />
+              </div>
+
+              <div class="form-group">
+                <label>Correo de Contacto</label>
+                <div class="input-wrap">
+                  <span class="input-icon">@</span>
+                  <input
+                    type="email"
+                    id="correo"
+                    placeholder="gamer@ejemplo.com"
+                    autocomplete="email"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group full">
+                <label>Asunto</label>
+                <div class="input-wrap">
+                  <span class="input-icon">▸</span>
+                  <input
+                    type="text"
+                    id="asunto"
+                    placeholder="Ej: Colaboración / Bug report / Sugerencia"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group full">
+                <label>Mensaje</label>
+                <div class="input-wrap">
+                  <span
+                    class="input-icon"
+                    style="top: 14px; align-self: flex-start"
+                    >✦</span
+                  >
+                  <textarea
+                    id="mensaje"
+                    placeholder="Escribe tu mensaje aquí..."
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              <span>⟫ ENVIAR TRANSMISIÓN ⟪</span>
+            </button>
+
+            <div class="status-msg" id="statusMsg"></div>
+          </form>
+        </div>
       </section>
     </main>
 
@@ -508,6 +604,196 @@
         link.classList.add("activo");
         document.getElementById(link.dataset.sec).classList.add("visible");
       }
+
+      const PAISES = [
+        {
+          grupo: "América Central",
+          lista: [
+            { code: "SV", name: "El Salvador" },
+            { code: "GT", name: "Guatemala" },
+            { code: "HN", name: "Honduras" },
+            { code: "NI", name: "Nicaragua" },
+            { code: "CR", name: "Costa Rica" },
+            { code: "PA", name: "Panamá" },
+            { code: "BZ", name: "Belice" },
+          ],
+        },
+        {
+          grupo: "América del Norte",
+          lista: [
+            { code: "MX", name: "México" },
+            { code: "US", name: "Estados Unidos" },
+            { code: "CA", name: "Canadá" },
+          ],
+        },
+        {
+          grupo: "América del Sur",
+          lista: [
+            { code: "CO", name: "Colombia" },
+            { code: "VE", name: "Venezuela" },
+            { code: "PE", name: "Perú" },
+            { code: "AR", name: "Argentina" },
+            { code: "CL", name: "Chile" },
+            { code: "BR", name: "Brasil" },
+            { code: "EC", name: "Ecuador" },
+            { code: "BO", name: "Bolivia" },
+            { code: "PY", name: "Paraguay" },
+            { code: "UY", name: "Uruguay" },
+          ],
+        },
+        {
+          grupo: "El Caribe",
+          lista: [
+            { code: "CU", name: "Cuba" },
+            { code: "DO", name: "República Dominicana" },
+            { code: "PR", name: "Puerto Rico" },
+            { code: "HT", name: "Haití" },
+            { code: "JM", name: "Jamaica" },
+          ],
+        },
+        {
+          grupo: "Europa",
+          lista: [
+            { code: "ES", name: "España" },
+            { code: "FR", name: "Francia" },
+            { code: "DE", name: "Alemania" },
+            { code: "IT", name: "Italia" },
+            { code: "GB", name: "Reino Unido" },
+            { code: "PT", name: "Portugal" },
+            { code: "NL", name: "Países Bajos" },
+            { code: "SE", name: "Suecia" },
+            { code: "NO", name: "Noruega" },
+            { code: "PL", name: "Polonia" },
+          ],
+        },
+        {
+          grupo: "Asia",
+          lista: [
+            { code: "JP", name: "Japón" },
+            { code: "KR", name: "Corea del Sur" },
+            { code: "CN", name: "China" },
+            { code: "IN", name: "India" },
+            { code: "PH", name: "Filipinas" },
+          ],
+        },
+        {
+          grupo: "Oceanía",
+          lista: [
+            { code: "AU", name: "Australia" },
+            { code: "NZ", name: "Nueva Zelanda" },
+          ],
+        },
+      ];
+
+      function flagUrl(code) {
+        return `https://flagcdn.com/w40/${code.toLowerCase()}.png`;
+      }
+
+      function renderOptions(filter = "") {
+        const list = document.getElementById("optionsList");
+        list.innerHTML = "";
+        const q = filter.toLowerCase();
+        let total = 0;
+        PAISES.forEach((g) => {
+          const items = g.lista.filter((p) => p.name.toLowerCase().includes(q));
+          if (!items.length) return;
+          total += items.length;
+          const lbl = document.createElement("div");
+          lbl.className = "option-group-label";
+          lbl.textContent = g.grupo;
+          list.appendChild(lbl);
+          items.forEach((p) => {
+            const opt = document.createElement("div");
+            opt.className = "dropdown-option";
+            opt.dataset.code = p.code;
+            opt.dataset.name = p.name;
+            opt.innerHTML = `<img src="${flagUrl(p.code)}" alt="${p.name}" loading="lazy"><span>${p.name}</span>`;
+            opt.addEventListener("click", () => selectPais(p.code, p.name));
+            list.appendChild(opt);
+          });
+        });
+        if (!total) {
+          const nr = document.createElement("div");
+          nr.className = "no-results";
+          nr.textContent = "Sin resultados";
+          list.appendChild(nr);
+        }
+      }
+
+      function selectPais(code, name) {
+        document.getElementById("paisValue").value = code;
+        const trigger = document.getElementById("selectTrigger");
+        trigger.innerHTML = `<img src="${flagUrl(code)}" alt="${name}"><span style="color:var(--text-primary)">${name}</span><span class="arrow">▼</span>`;
+        document.getElementById("paisBox").classList.remove("open");
+        document
+          .querySelectorAll(".dropdown-option")
+          .forEach((o) =>
+            o.classList.toggle("selected", o.dataset.code === code),
+          );
+      }
+
+      document
+        .getElementById("selectTrigger")
+        .addEventListener("click", (e) => {
+          e.stopPropagation();
+          const box = document.getElementById("paisBox");
+          box.classList.toggle("open");
+          if (box.classList.contains("open")) {
+            document.getElementById("searchInput").focus();
+            renderOptions();
+          }
+        });
+
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", function () {
+          renderOptions(this.value);
+        });
+
+      document.addEventListener("click", (e) => {
+        if (!document.getElementById("paisBox").contains(e.target)) {
+          document.getElementById("paisBox").classList.remove("open");
+        }
+      });
+
+      renderOptions();
+
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const nombre = document.getElementById("nombre").value.trim();
+          const pais = document.getElementById("pais").value;
+          const correo = document.getElementById("correo").value.trim();
+          const asunto = document.getElementById("asunto").value.trim();
+          const mensaje = document.getElementById("mensaje").value.trim();
+          const status = document.getElementById("statusMsg");
+
+          if (!nombre || !pais || !correo || !asunto || !mensaje) {
+            status.className = "status-msg error";
+            status.style.display = "block";
+            status.textContent =
+              "⚠ CAMPOS INCOMPLETOS — TODOS LOS CAMPOS SON REQUERIDOS";
+            return;
+          }
+          const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo);
+          if (!emailOk) {
+            status.className = "status-msg error";
+            status.style.display = "block";
+            status.textContent = "⚠ CORREO INVÁLIDO — VERIFICA EL FORMATO";
+            return;
+          }
+
+          status.className = "status-msg success";
+          status.style.display = "block";
+          status.textContent =
+            "✓ TRANSMISIÓN ENVIADA — NOS PONDREMOS EN CONTACTO PRONTO";
+          document.getElementById("contactForm").reset();
+          document.getElementById("flagDisplay").textContent = "🌎";
+          setTimeout(() => {
+            status.style.display = "none";
+          }, 5000);
+        });
     </script>
   </body>
 </html>
