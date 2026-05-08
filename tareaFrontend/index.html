@@ -763,12 +763,11 @@
         .addEventListener("submit", function (e) {
           e.preventDefault();
           const nombre = document.getElementById("nombre").value.trim();
-          const pais = document.getElementById("pais").value;
+          const pais = document.getElementById("paisValue").value;
           const correo = document.getElementById("correo").value.trim();
           const asunto = document.getElementById("asunto").value.trim();
           const mensaje = document.getElementById("mensaje").value.trim();
           const status = document.getElementById("statusMsg");
-
           if (!nombre || !pais || !correo || !asunto || !mensaje) {
             status.className = "status-msg error";
             status.style.display = "block";
@@ -776,20 +775,20 @@
               "⚠ CAMPOS INCOMPLETOS — TODOS LOS CAMPOS SON REQUERIDOS";
             return;
           }
-          const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo);
-          if (!emailOk) {
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) {
             status.className = "status-msg error";
             status.style.display = "block";
             status.textContent = "⚠ CORREO INVÁLIDO — VERIFICA EL FORMATO";
             return;
           }
-
           status.className = "status-msg success";
           status.style.display = "block";
           status.textContent =
             "✓ TRANSMISIÓN ENVIADA — NOS PONDREMOS EN CONTACTO PRONTO";
-          document.getElementById("contactForm").reset();
-          document.getElementById("flagDisplay").textContent = "🌎";
+          this.reset();
+          document.getElementById("paisValue").value = "";
+          document.getElementById("selectTrigger").innerHTML =
+            `<div class="placeholder-icon">🌎</div><span style="color:rgba(136,153,187,0.6);font-weight:400;">— Selecciona tu país —</span><span class="arrow">▼</span>`;
           setTimeout(() => {
             status.style.display = "none";
           }, 5000);
