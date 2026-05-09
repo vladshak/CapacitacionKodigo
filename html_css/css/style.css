@@ -33,6 +33,17 @@ body {
   line-height: 1.5;
 }
 
+/** seleccionado por clase (.) */
+.preparation-time {
+  background-color: #f3e5d8;
+  padding: 1rem 1.5rem; /** 16px top, bottom,  24px left, rigth */
+}
+
+/** seleccionando un elemento hijo */
+.preparation-time h3 {
+  color: #752c49;
+}
+
 .blog-container {
   margin-top: 1rem;
   padding: 1rem;
@@ -54,5 +65,13 @@ table {
 
 tr {
   border-bottom: 1px solid #6b6b6b;
-  font-weight: 800;
+}
+
+td {
+  padding: 0.5rem; /** .5rem equivale a 8 pixeles */
+}
+
+td:nth-child(2) {
+  color: #844631;
+  font-weight: bold; /** agregando negrita al texto */
 }
