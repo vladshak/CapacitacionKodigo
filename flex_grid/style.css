@@ -1,0 +1,39 @@
+/* Normalizacion */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.box {
+  background-color: blueviolet;
+  width: 200px;
+  height: 200px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/** USO DEL GRID */
+.gridbox {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
+  gap: 0.5rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
