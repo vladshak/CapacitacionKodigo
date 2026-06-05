@@ -1,7 +1,7 @@
-**¡Bienvenido a la Transformación Digital para la Docencia Técnica!**  
+# **¡Bienvenido a la Transformación Digital para la Docencia Técnica!**  
 Este repositorio documenta el avance y aprendizaje práctico durante la capacitación.
 
---
+---
 
 ## Tecnologías Utilizadas
 
