@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Restaurante</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="contenedor-pagina bg-gradient">
+      <section class="block container p-6 shadow-xl bg-white rounded-xl">
+        <div class="grilla-bloque">
+          <div>
+            <h1>API Restaurante</h1>
+            <p>
+              Gestiona usuarios, mesas y reservaciones con autenticación JWT y
+              roles.
+            </p>
+            <div class="botones">
+              <a class="button primary" href="/api-docs" target="_blank"
+                >Ver documentación</a
+              >
+              <a class="button success" href="mailto:soporte@restaurante.local"
+                >Contactar</a
+              >
+            </div>
+          </div>
+          <div class="tarjeta-bloque p-4 bg-light rounded-xl">
+            <h2>Endpoints principales</h2>
+            <ul>
+              <li>
+                <strong>POST /api/auth/register</strong> — Registro cliente
+              </li>
+              <li><strong>POST /api/auth/login</strong> — Iniciar sesión</li>
+              <li><strong>GET /api/auth/perfil</strong> — Perfil usuario</li>
+              <li><strong>GET /api/mesas</strong> — Listar mesas</li>
+              <li><strong>POST /api/reservaciones</strong> — Crear reserva</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section
+        class="informacion container p-6 bg-white rounded-xl shadow-xl mt-4"
+      >
+        <h2>Características</h2>
+        <div class="grilla-caracteristicas">
+          <article class="tarjeta-caracteristica">
+            <h3>Seguridad</h3>
+            <p>
+              JWT con roles para controlar accesos de clientes y
+              administradores.
+            </p>
+          </article>
+          <article class="tarjeta-caracteristica">
+            <h3>Reservaciones</h3>
+            <p>
+              Validación de disponibilidad por fecha y hora antes de confirmar.
+            </p>
+          </article>
+          <article class="tarjeta-caracteristica">
+            <h3>Admin</h3>
+            <p>
+              Crear, actualizar y desactivar mesas; ver y cambiar estados de
+              reservas.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

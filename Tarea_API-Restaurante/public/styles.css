@@ -1,0 +1,112 @@
+:root {
+  --bg-start: #0b3c82;
+  --bg-middle: #1e90ff;
+  --bg-end: #7ed957;
+  --text-dark: #0d1723;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.16),
+      transparent 35%
+    ),
+    linear-gradient(135deg, var(--bg-start), var(--bg-middle), var(--bg-end));
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+.contenedor-pagina {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+.container {
+  width: min(1140px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.block {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grilla-bloque {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 1.5rem;
+}
+
+.block h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.2rem, 3vw, 3rem);
+  color: #04275f;
+}
+
+.block p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.tarjeta-bloque {
+  background: rgba(254, 255, 255, 0.95);
+  border: 1px solid rgba(13, 25, 35, 0.08);
+}
+
+.tarjeta-bloque h2 {
+  margin-top: 0;
+}
+
+.tarjeta-bloque ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.tarjeta-bloque li {
+  margin-bottom: 0.6rem;
+}
+
+.informacion {
+  margin-top: 2rem;
+}
+
+.grilla-caracteristicas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.tarjeta-caracteristica {
+  padding: 1.25rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.feature-card h3 {
+  margin-top: 0;
+}
+
+@media (max-width: 860px) {
+  .grilla-bloque {
+    grid-template-columns: 1fr;
+  }
+
+  .grilla-caracteristicas {
+    grid-template-columns: 1fr;
+  }
+}

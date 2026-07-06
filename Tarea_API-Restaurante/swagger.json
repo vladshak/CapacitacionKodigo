@@ -1,0 +1,342 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Restaurante",
+    "description": "API de reservaciones y mesas con autenticación JWT y roles.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "Base Render",
+      "description": "Servidor en Render"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+    "schemas": {
+      "RegistroUsuario": {
+        "type": "object",
+        "required": ["nombre", "correo", "password"],
+        "properties": {
+          "nombre": { "type": "string" },
+          "correo": { "type": "string", "format": "email" },
+          "password": { "type": "string" }
+        }
+      },
+      "LoginUsuario": {
+        "type": "object",
+        "required": ["correo", "password"],
+        "properties": {
+          "correo": { "type": "string", "format": "email" },
+          "password": { "type": "string" }
+        }
+      },
+      "Mesa": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "numero": { "type": "integer" },
+          "capacidad": { "type": "integer" },
+          "disponible": { "type": "boolean" },
+          "createdAt": { "type": "string", "format": "date-time" }
+        }
+      },
+      "ReservacionCrear": {
+        "type": "object",
+        "required": ["mesaId", "fecha", "hora", "personas"],
+        "properties": {
+          "mesaId": { "type": "integer" },
+          "fecha": {
+            "type": "string",
+            "format": "date",
+            "example": "2026-07-10"
+          },
+          "hora": { "type": "string", "example": "18:00:00" },
+          "personas": { "type": "integer" }
+        }
+      },
+      "ReservacionEstado": {
+        "type": "object",
+        "required": ["estado"],
+        "properties": {
+          "estado": {
+            "type": "string",
+            "enum": ["pendiente", "confirmada", "cancelada"]
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/api/auth/register": {
+      "post": {
+        "summary": "Registro de nuevo usuario",
+        "tags": ["Auth"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/RegistroUsuario" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Usuario registrado" },
+          "400": { "description": "Error de validación" }
+        }
+      }
+    },
+    "/api/auth/login": {
+      "post": {
+        "summary": "Login de usuario",
+        "tags": ["Auth"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/LoginUsuario" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Login exitoso" },
+          "400": { "description": "Credenciales incompletas" },
+          "401": { "description": "Credenciales inválidas" }
+        }
+      }
+    },
+    "/api/auth/perfil": {
+      "get": {
+        "summary": "Perfil del usuario autenticado",
+        "tags": ["Auth"],
+        "security": [{ "bearerAuth": [] }],
+        "responses": {
+          "200": { "description": "Datos del usuario" },
+          "401": { "description": "Token inválido" }
+        }
+      }
+    },
+    "/api/mesas": {
+      "get": {
+        "summary": "Listar mesas",
+        "tags": ["Mesas"],
+        "parameters": [
+          {
+            "name": "disponible",
+            "in": "query",
+            "schema": { "type": "boolean" },
+            "description": "Filtrar mesas por disponibilidad"
+          }
+        ],
+        "responses": {
+          "200": { "description": "Lista de mesas" }
+        }
+      },
+      "post": {
+        "summary": "Crear una nueva mesa",
+        "tags": ["Mesas"],
+        "security": [{ "bearerAuth": [] }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["numero", "capacidad"],
+                "properties": {
+                  "numero": { "type": "integer" },
+                  "capacidad": { "type": "integer" },
+                  "disponible": { "type": "boolean" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Mesa creada" },
+          "400": { "description": "Error de validación" }
+        }
+      }
+    },
+    "/api/mesas/{id}": {
+      "get": {
+        "summary": "Obtener mesa por ID",
+        "tags": ["Mesas"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Mesa encontrada" },
+          "404": { "description": "Mesa no encontrada" }
+        }
+      },
+      "put": {
+        "summary": "Actualizar mesa",
+        "tags": ["Mesas"],
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "numero": { "type": "integer" },
+                  "capacidad": { "type": "integer" },
+                  "disponible": { "type": "boolean" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Mesa actualizada" },
+          "404": { "description": "Mesa no encontrada" }
+        }
+      },
+      "delete": {
+        "summary": "Desactivar mesa (soft delete)",
+        "tags": ["Mesas"],
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Mesa desactivada" },
+          "404": { "description": "Mesa no encontrada" }
+        }
+      }
+    },
+    "/api/reservaciones": {
+      "post": {
+        "summary": "Crear reservación",
+        "tags": ["Reservaciones"],
+        "security": [{ "bearerAuth": [] }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ReservacionCrear" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Reservación creada" },
+          "400": { "description": "Error de validación" }
+        }
+      },
+      "get": {
+        "summary": "Listar reservaciones (admin)",
+        "tags": ["Reservaciones"],
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [
+          {
+            "name": "estado",
+            "in": "query",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "fecha",
+            "in": "query",
+            "schema": { "type": "string", "format": "date" }
+          },
+          {
+            "name": "mesaId",
+            "in": "query",
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Lista de reservaciones" }
+        }
+      }
+    },
+    "/api/reservaciones/mis": {
+      "get": {
+        "summary": "Obtener reservaciones del usuario autenticado",
+        "tags": ["Reservaciones"],
+        "security": [{ "bearerAuth": [] }],
+        "responses": {
+          "200": { "description": "Lista de reservaciones del usuario" }
+        }
+      }
+    },
+    "/api/reservaciones/{id}/estado": {
+      "put": {
+        "summary": "Cambiar estado de reservación",
+        "tags": ["Reservaciones"],
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ReservacionEstado" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Estado actualizado" },
+          "400": { "description": "Estado inválido" },
+          "404": { "description": "Reservación no encontrada" }
+        }
+      }
+    },
+    "/api/reservaciones/{id}": {
+      "delete": {
+        "summary": "Cancelar reservación propia",
+        "tags": ["Reservaciones"],
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Reservación cancelada" },
+          "403": { "description": "No autorizado" },
+          "404": { "description": "Reservación no encontrada" }
+        }
+      }
+    }
+  }
+}
