@@ -1,0 +1,15 @@
+{
+  "name": "gamevault-servidor",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "migrar": "node baseDatos/ejecutarEsquema.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.21.1",
+    "mysql2": "^3.4.1"
+  }
+}

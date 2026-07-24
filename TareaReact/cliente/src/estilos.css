@@ -1,0 +1,41 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #f5f7fb;
+  background: linear-gradient(135deg, #0f172a 0%, #111827 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: linear-gradient(135deg, #0f172a 0%, #111827 100%); }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+
+.aplicacion { min-height: 100vh; }
+.contenedor { width: min(1120px, calc(100% - 2rem)); margin: 0 auto; }
+.hero, .seccion, .catalogo, .formulario-panel { padding: 3rem 0; }
+.hero { display: grid; gap: 2rem; align-items: center; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.hero-card, .tarjeta, .panel, .estado { background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.25); }
+.hero-card { padding: 2rem; }
+.boton, .boton-secundario { border: 0; border-radius: 999px; padding: 0.9rem 1.2rem; cursor: pointer; transition: transform 0.2s ease; }
+.boton { background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%); color: white; }
+.boton:hover { transform: translateY(-2px); }
+.boton-secundario { background: rgba(255,255,255,0.08); color: #f8fafc; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.tarjeta { padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.tarjeta img { width: 100%; height: 180px; object-fit: cover; border-radius: 16px; }
+.fila { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.formulario-panel { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 1.5rem; }
+.panel { padding: 1.5rem; }
+.campo { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 1rem; }
+.campo input, .campo select, .campo textarea { border: 1px solid rgba(148, 163, 184, 0.35); background: rgba(15, 23, 42, 0.9); color: #f8fafc; border-radius: 12px; padding: 0.8rem 0.9rem; }
+.error { color: #fda4af; font-size: 0.9rem; min-height: 1rem; }
+.estado { padding: 2rem; text-align: center; }
+.mensaje-exito { color: #86efac; }
+.mensaje-error { color: #fda4af; }
+@media (max-width: 900px) { .hero, .formulario-panel, .grid-3 { grid-template-columns: 1fr; } .grid-2 { grid-template-columns: 1fr; } }
