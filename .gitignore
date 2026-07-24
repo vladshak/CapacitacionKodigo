@@ -29,6 +29,7 @@ node_modules/
 jspm_packages/
 bower_components/
 web_modules/
+spec/
 
 # Logs
 logs
