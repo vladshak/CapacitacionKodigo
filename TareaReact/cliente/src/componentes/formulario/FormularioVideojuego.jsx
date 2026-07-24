@@ -65,6 +65,7 @@ function FormularioVideojuego({
   const esModoDetalle = modo === "detalle";
   const esModoEdicion = modo === "editar";
   const esSoloLectura = esModoDetalle;
+  const tieneImagen = Boolean(valores.urlImagen?.trim());
 
   return (
     <form className="panel" onSubmit={manejarEnvio}>
@@ -165,6 +166,21 @@ function FormularioVideojuego({
         placeholder="9.5"
         disabled={esSoloLectura}
       />
+
+      {esModoEdicion ? (
+        <div className="preview-imagen">
+          <p className="etiqueta-preview">Vista previa de la imagen</p>
+          {tieneImagen ? (
+            <img
+              className="preview-imagen-actual"
+              src={valores.urlImagen}
+              alt={`Vista previa de ${valores.titulo || "videojuego"}`}
+            />
+          ) : (
+            <p className="imagen-fallback">No hay una imagen disponible.</p>
+          )}
+        </div>
+      ) : null}
 
       {mensajeError ? <p className="mensaje-error">{mensajeError}</p> : null}
       {estado === "exito" ? (

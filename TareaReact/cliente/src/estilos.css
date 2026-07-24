@@ -166,6 +166,45 @@ textarea {
   padding: 1rem;
   border-bottom: 1px solid rgba(148, 163, 184, 0.15);
   text-align: left;
+  vertical-align: middle;
+}
+.miniatura-tabla {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+.imagen-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  border: 1px dashed rgba(148, 163, 184, 0.4);
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 0.35rem;
+}
+.preview-imagen {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.etiqueta-preview {
+  margin: 0;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+.preview-imagen-actual {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
 }
 .tabla-footer {
   display: flex;

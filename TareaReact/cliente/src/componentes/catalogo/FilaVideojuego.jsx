@@ -1,6 +1,19 @@
 function FilaVideojuego({ videojuego, onVer, onEliminar }) {
+  const tieneImagen = Boolean(videojuego.urlImagen?.trim());
+
   return (
     <tr>
+      <td>
+        {tieneImagen ? (
+          <img
+            className="miniatura-tabla"
+            src={videojuego.urlImagen}
+            alt={videojuego.titulo}
+          />
+        ) : (
+          <span className="imagen-fallback">Sin imagen</span>
+        )}
+      </td>
       <td>{videojuego.titulo}</td>
       <td>{videojuego.plataforma}</td>
       <td>{videojuego.genero}</td>

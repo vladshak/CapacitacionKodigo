@@ -34,6 +34,7 @@ function ListaVideojuegos({ onVer, onEliminar }) {
       <table className="tabla-videojuegos">
         <thead>
           <tr>
+            <th>Imagen</th>
             <th>Título</th>
             <th>Plataforma</th>
             <th>Género</th>
