@@ -60,6 +60,7 @@ El frontend está construido con **React + Vite** y el backend con **Node.js + E
 
 ## 📁 Estructura del proyecto
 
+```
 TareaReact/
 ├── cliente/ # Frontend React (Vite)
 │ ├── src/
@@ -94,6 +95,7 @@ TareaReact/
 │
 ├── .gitignore
 └── README.md
+```
 
 ---
 
