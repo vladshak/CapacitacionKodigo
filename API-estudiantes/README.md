@@ -62,7 +62,7 @@ http://localhost:3000
 Para comprobar en servidor en linea:
 
 ```
-https://capacitacionkodigo-production.up.railway.app/
+https://capacitacionkodigo-production-1282.up.railway.app/
 ```
 
 ---
@@ -98,7 +98,7 @@ Cada estudiante tiene la siguiente estructura:
 ## 🔗 Endpoints disponibles
 
 **Base URL:** `http://localhost:3000`\
-**Base ONLINE:** `https://capacitacionkodigo-production.up.railway.app/`
+**Base ONLINE:** `https://capacitacionkodigo-production-1282.up.railway.app/`
 
 ---
 
@@ -111,8 +111,9 @@ Obtiene el listado completo de todos los estudiantes registrados.
 ```
 GET http://localhost:3000/estudiantes
 ```
+
 ```
-GET https://capacitacionkodigo-production.up.railway.app/estudiantes/
+GET https://capacitacionkodigo-production-1282.up.railway.app/estudiantes/
 ```
 
 **Response exitoso `200 OK`:**
@@ -145,8 +146,9 @@ Obtiene un estudiante específico por su ID.
 ```
 GET http://localhost:3000/estudiantes/1
 ```
+
 ```
-GET https://capacitacionkodigo-production.up.railway.app/estudiantes/1
+GET https://capacitacionkodigo-production-1282.up.railway.app/estudiantes/1
 ```
 
 **Response exitoso `200 OK`:**
@@ -184,8 +186,9 @@ Registra un nuevo estudiante en el sistema.
 ```
 POST http://localhost:3000/estudiantes
 ```
+
 ```
-POST https://capacitacionkodigo-production.up.railway.app/estudiantes
+POST https://capacitacionkodigo-production-1282.up.railway.app/estudiantes
 Content-Type: application/json
 ```
 
@@ -254,8 +257,9 @@ Actualiza los datos de un estudiante existente. Se pueden enviar solo los campos
 ```
 PUT http://localhost:3000/estudiantes/1
 ```
+
 ```
-PUT https://capacitacionkodigo-production.up.railway.app/estudiantes/1
+PUT https://capacitacionkodigo-production-1282.up.railway.app/estudiantes/1
 Content-Type: application/json
 ```
 
@@ -303,8 +307,9 @@ Elimina un estudiante del sistema por su ID.
 ```
 DELETE http://localhost:3000/estudiantes/1
 ```
+
 ```
-DELETE https://capacitacionkodigo-production.up.railway.app/estudiantes/1
+DELETE https://capacitacionkodigo-production-1282.up.railway.app/estudiantes/1
 ```
 
 **Response exitoso `200 OK`:**
@@ -363,15 +368,17 @@ Puedes probar todos los endpoints importando las siguientes URLs base:
 ```
 http://localhost:3000/estudiantes
 ```
+
 ```
 http://localhost:3000/estudiantes/1
 ```
 
 ```
-https://capacitacionkodigo-production.up.railway.app/estudiantes
+https://capacitacionkodigo-production-1282.up.railway.app/estudiantes
 ```
+
 ```
-https://capacitacionkodigo-production.up.railway.app/estudiantes/1
+https://capacitacionkodigo-production-1282.up.railway.app/estudiantes/1
 ```
 
 Asegúrate de configurar el header `Content-Type: application/json` en las peticiones `POST` y `PUT`.
@@ -380,6 +387,6 @@ Asegúrate de configurar el header `Content-Type: application/json` en las petic
 
 ## 👨‍🏫 Autor
 
-Desarrollado como práctica educativa en el 
+Desarrollado como práctica educativa en el
 **Curso de Transformación Digital para la Docencia Técnica** \
 _Aníbal Vladimir Martínez Rodríguez_
