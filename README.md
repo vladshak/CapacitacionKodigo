@@ -112,40 +112,7 @@ Aplicación web completa con **React + Express + MySQL** para gestionar un catá
 - CRUD completo (Crear, Leer, Actualizar, Eliminar)
 - Estados de carga, error y vacío
 - API propia en Express conectada a MySQL (con fallback en memoria)
-
-#### Tecnologías
-
-- **Frontend**: React 18 + Vite
-- **Backend**: Node.js + Express + MySQL2
-- **Base de datos**: MySQL
-
-#### Estructura
-
-```
-TareaReact/
-├── cliente/          # Frontend React
-└── servidor/         # Backend Express + MySQL
-text#### Ejecución local
-```
-
-# Servidor
-
-```bash
-cd TareaReact/servidor
-npm install
-npm run migrar    # Crea la base de datos y tabla
-npm start
-```
-
-# Cliente
-
-```bash
-cd TareaReact/cliente
-npm install
-npm run dev
-```
-
-Ver documentación completa → TareaReact/README.md
+- Ver documentación completa → TareaReact/README.md
 
 ### 📌 Resumen de despliegues
 
@@ -154,5 +121,7 @@ Ver documentación completa → TareaReact/README.md
 | GameVault (TareaReact) | Demo React | API         |
 | API Estudiantes        | —          | API         |
 | API Restaurante        | UI         | Swagger     |
+
+---
 
 Actualizado: Julio 2026
